@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.gwtplatform:gwtp-dispatch-rpc-client:1.5-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/gwtplatform/gwtp-dispatch-rpc-client/1.5-SNAPSHOT/gwtp-dispatch-rpc-client-1.5-20150428.221318-27.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/gwtplatform/gwtp-dispatch-rpc-client/1.5-SNAPSHOT/gwtp-dispatch-rpc-client-1.5-20150428.221318-27-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/gwtplatform/gwtp-dispatch-rpc-client/1.5-SNAPSHOT/gwtp-dispatch-rpc-client-1.5-20150428.221318-27-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
