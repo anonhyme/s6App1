@@ -1,5 +1,5 @@
 /*
- * Copyright 2011 ArcBees Inc.
+ * Copyright 2015 ArcBees Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
  * use this file except in compliance with the License. You may obtain a copy of
@@ -14,30 +14,27 @@
  * the License.
  */
 
-package com.gwtplatform.samples.basic.shared.dispatch;
+package com.gwtplatform.samples.basic.client.resources;
 
-import com.gwtplatform.dispatch.rpc.shared.Result;
+import com.google.gwt.resources.client.ClientBundle;
+import com.google.gwt.resources.client.CssResource;
 
-
-/**
- * The result of a {@link SendTextToServerAction} action.
- */
-public class SendTextToServerResult implements Result {
-    private String response;
-
-
-    public SendTextToServerResult(final String response) {
-        this.response = response;
+public interface AppResources extends ClientBundle {
+    interface Normalize extends CssResource {
     }
 
-    /**
-     * For serialization only.
-     */
-    @SuppressWarnings("unused")
-    private SendTextToServerResult() {
+    interface Style extends CssResource {
+        @ClassName("label_error")
+        String labelError();
+
+        String container();
+
+        String box();
     }
 
-    public String getResponse() {
-        return response;
-    }
+    @Source("css/normalize.gss")
+    Normalize normalize();
+
+    @Source("css/style.gss")
+    Style style();
 }

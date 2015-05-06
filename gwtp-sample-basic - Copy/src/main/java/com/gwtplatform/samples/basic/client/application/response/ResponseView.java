@@ -14,7 +14,7 @@
  * the License.
  */
 
-package com.gwtplatform.samples.basic.client.application;
+package com.gwtplatform.samples.basic.client.application.response;
 
 import javax.inject.Inject;
 
@@ -24,39 +24,38 @@ import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.uibinder.client.UiHandler;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.HTML;
-import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.Widget;
 import com.gwtplatform.mvp.client.ViewWithUiHandlers;
 
-public class ApplicationView extends ViewWithUiHandlers<ApplicationUiHandlers> implements ApplicationPresenter.MyView {
-    interface Binder extends UiBinder<Widget, ApplicationView> {
+public class ResponseView extends ViewWithUiHandlers<ResponseUiHandlers> implements ResponsePresenter.MyView {
+    interface Binder extends UiBinder<Widget, ResponseView> {
     }
 
     @UiField
-    TextBox nameField;
+    HTML textToServer;
     @UiField
-    Button sendButton;
+    HTML serverResponse;
     @UiField
-    HTML error;
+    Button closeButton;
 
     @Inject
-    ApplicationView(Binder uiBinder) {
+    ResponseView(
+            Binder uiBinder) {
         initWidget(uiBinder.createAndBindUi(this));
     }
 
     @Override
-    public void resetAndFocus() {
-        nameField.setFocus(true);
-        nameField.selectAll();
+    public void setServerResponse(String serverResponse) {
+        this.serverResponse.setHTML(serverResponse);
     }
 
     @Override
-    public void setError(String errorText) {
-        error.setHTML(errorText);
+    public void setTextToServer(String textToServer) {
+        this.textToServer.setHTML(textToServer);
     }
 
-    @UiHandler("sendButton")
-    void onSend(ClickEvent event) {
-        getUiHandlers().sendName(nameField.getText());
+    @UiHandler("closeButton")
+    void onClose(ClickEvent event) {
+        getUiHandlers().onClose();
     }
 }

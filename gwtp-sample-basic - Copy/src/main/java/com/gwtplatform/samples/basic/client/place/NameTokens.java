@@ -14,30 +14,20 @@
  * the License.
  */
 
-package com.gwtplatform.samples.basic.shared.dispatch;
-
-import com.gwtplatform.dispatch.rpc.shared.Result;
-
+package com.gwtplatform.samples.basic.client.place;
 
 /**
- * The result of a {@link SendTextToServerAction} action.
+ * Main presenters name tokens.
  */
-public class SendTextToServerResult implements Result {
-    private String response;
+public class NameTokens {
+    public static final String home = "home";
+    public static final String response = "response";
 
-
-    public SendTextToServerResult(final String response) {
-        this.response = response;
+    public static String getHome() {
+        return home;
     }
 
-    /**
-     * For serialization only.
-     */
-    @SuppressWarnings("unused")
-    private SendTextToServerResult() {
-    }
-
-    public String getResponse() {
+    public static String getResponse() {
         return response;
     }
 }

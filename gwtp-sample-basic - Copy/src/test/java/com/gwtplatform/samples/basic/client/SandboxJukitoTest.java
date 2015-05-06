@@ -14,30 +14,27 @@
  * the License.
  */
 
-package com.gwtplatform.samples.basic.shared.dispatch;
+package com.gwtplatform.samples.basic.client;
 
-import com.gwtplatform.dispatch.rpc.shared.Result;
+import org.jukito.JukitoModule;
+import org.jukito.JukitoRunner;
+import org.junit.Test;
+import org.junit.runner.RunWith;
 
+import static org.junit.Assert.assertTrue;
 
-/**
- * The result of a {@link SendTextToServerAction} action.
- */
-public class SendTextToServerResult implements Result {
-    private String response;
-
-
-    public SendTextToServerResult(final String response) {
-        this.response = response;
-    }
-
+@RunWith(JukitoRunner.class)
+public class SandboxJukitoTest {
     /**
-     * For serialization only.
      */
-    @SuppressWarnings("unused")
-    private SendTextToServerResult() {
+    public static class Module extends JukitoModule {
+        @Override
+        protected void configureTest() {
+        }
     }
 
-    public String getResponse() {
-        return response;
+    @Test
+    public void testSandbox() {
+        assertTrue(true);
     }
 }

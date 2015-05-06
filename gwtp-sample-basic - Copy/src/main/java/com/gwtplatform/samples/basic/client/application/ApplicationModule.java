@@ -14,30 +14,17 @@
  * the License.
  */
 
-package com.gwtplatform.samples.basic.shared.dispatch;
+package com.gwtplatform.samples.basic.client.application;
 
-import com.gwtplatform.dispatch.rpc.shared.Result;
+import com.gwtplatform.mvp.client.gin.AbstractPresenterModule;
+import com.gwtplatform.samples.basic.client.application.response.ResponseModule;
 
+public class ApplicationModule extends AbstractPresenterModule {
+    @Override
+    protected void configure() {
+        install(new ResponseModule());
 
-/**
- * The result of a {@link SendTextToServerAction} action.
- */
-public class SendTextToServerResult implements Result {
-    private String response;
-
-
-    public SendTextToServerResult(final String response) {
-        this.response = response;
-    }
-
-    /**
-     * For serialization only.
-     */
-    @SuppressWarnings("unused")
-    private SendTextToServerResult() {
-    }
-
-    public String getResponse() {
-        return response;
+        bindPresenter(ApplicationPresenter.class, ApplicationPresenter.MyView.class, ApplicationView.class,
+                ApplicationPresenter.MyProxy.class);
     }
 }

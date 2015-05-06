@@ -14,30 +14,17 @@
  * the License.
  */
 
-package com.gwtplatform.samples.basic.shared.dispatch;
+package com.gwtplatform.samples.basic.client;
 
-import com.gwtplatform.dispatch.rpc.shared.Result;
+import com.google.gwt.junit.client.GWTTestCase;
 
-
-/**
- * The result of a {@link SendTextToServerAction} action.
- */
-public class SendTextToServerResult implements Result {
-    private String response;
-
-
-    public SendTextToServerResult(final String response) {
-        this.response = response;
+public class SandboxGwtTest extends GWTTestCase {
+    @Override
+    public String getModuleName() {
+        return "com.gwtplatform.samples.basic.Gwtpsample";
     }
 
-    /**
-     * For serialization only.
-     */
-    @SuppressWarnings("unused")
-    private SendTextToServerResult() {
-    }
-
-    public String getResponse() {
-        return response;
+    public void testSandbox() {
+        assertTrue(true);
     }
 }

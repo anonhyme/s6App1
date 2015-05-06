@@ -1,5 +1,5 @@
 /*
- * Copyright 2011 ArcBees Inc.
+ * Copyright 2015 ArcBees Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
  * use this file except in compliance with the License. You may obtain a copy of
@@ -14,17 +14,14 @@
  * the License.
  */
 
-package com.gwtplatform.samples.basic.server.guice;
+package com.gwtplatform.samples.basic.client.application.response;
 
-import com.google.inject.Guice;
-import com.google.inject.Injector;
-import com.google.inject.persist.jpa.JpaPersistModule;
-import com.google.inject.servlet.GuiceServletContextListener;
+import com.gwtplatform.mvp.client.gin.AbstractPresenterModule;
 
-public class GuiceServletConfig extends GuiceServletContextListener {
+public class ResponseModule extends AbstractPresenterModule {
     @Override
-    protected Injector getInjector() {
-        return Guice.createInjector(new ServerModule(), new DispatchServletModule(), new JpaPersistModule("myFirstJpaUnit"));
+    protected void configure() {
+        bindPresenter(ResponsePresenter.class, ResponsePresenter.MyView.class, ResponseView.class,
+                ResponsePresenter.MyProxy.class);
     }
 }
-

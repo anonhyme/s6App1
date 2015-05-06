@@ -14,30 +14,18 @@
  * the License.
  */
 
-package com.gwtplatform.samples.basic.shared.dispatch;
+package com.gwtplatform.samples.basic.server.guice;
 
-import com.gwtplatform.dispatch.rpc.shared.Result;
-
+import com.gwtplatform.dispatch.rpc.server.guice.HandlerModule;
+import com.gwtplatform.samples.basic.server.dispatch.SendTextToServerHandler;
+import com.gwtplatform.samples.basic.shared.dispatch.SendTextToServerAction;
 
 /**
- * The result of a {@link SendTextToServerAction} action.
+ * Module which binds the handlers and configurations.
  */
-public class SendTextToServerResult implements Result {
-    private String response;
-
-
-    public SendTextToServerResult(final String response) {
-        this.response = response;
-    }
-
-    /**
-     * For serialization only.
-     */
-    @SuppressWarnings("unused")
-    private SendTextToServerResult() {
-    }
-
-    public String getResponse() {
-        return response;
+public class ServerModule extends HandlerModule {
+    @Override
+    protected void configureHandlers() {
+        bindHandler(SendTextToServerAction.class, SendTextToServerHandler.class);
     }
 }

@@ -16,20 +16,19 @@
 
 package com.gwtplatform.samples.basic.server.dispatch;
 
-import com.google.inject.Guice;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+import javax.servlet.ServletContext;
+import javax.servlet.http.HttpServletRequest;
+
 import com.google.inject.Inject;
-import com.google.inject.Injector;
 import com.google.inject.Provider;
 import com.gwtplatform.dispatch.rpc.server.ExecutionContext;
 import com.gwtplatform.dispatch.rpc.server.actionhandler.ActionHandler;
 import com.gwtplatform.dispatch.shared.ActionException;
-import com.gwtplatform.samples.basic.server.data.initializer.DaoModule;
 import com.gwtplatform.samples.basic.shared.FieldVerifier;
 import com.gwtplatform.samples.basic.shared.dispatch.SendTextToServerAction;
 import com.gwtplatform.samples.basic.shared.dispatch.SendTextToServerResult;
-
-import javax.servlet.ServletContext;
-import javax.servlet.http.HttpServletRequest;
 
 public class SendTextToServerHandler implements ActionHandler<SendTextToServerAction, SendTextToServerResult> {
     private Provider<HttpServletRequest> requestProvider;
@@ -43,9 +42,7 @@ public class SendTextToServerHandler implements ActionHandler<SendTextToServerAc
         this.requestProvider = requestProvider;
     }
 
-//        EntityManagerFactory emf = Persistence.createEntityManagerFactory("myFirstJpaUnit");
-
-
+    EntityManagerFactory emf = Persistence.createEntityManagerFactory("myUnit");
 
     @Override
     public SendTextToServerResult execute(SendTextToServerAction action, ExecutionContext context)

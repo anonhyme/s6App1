@@ -28,4 +28,4 @@ www-test/
 .gwt-tmp/
 
 **/.idea
-*.iml
+gwtp-sample-basic\gwtp-sample-basic.iml
