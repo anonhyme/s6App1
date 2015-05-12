@@ -1,4 +1,4 @@
-*.class
+#*.class
 
 # Package Files #
 *.jar
@@ -28,4 +28,5 @@ www-test/
 .gwt-tmp/
 
 **/.idea
-gwtp-sample-basic\gwtp-sample-basic.iml
+
+#gwtp-sample-basic\gwtp-sample-basic.iml
