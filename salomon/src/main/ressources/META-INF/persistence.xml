@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence" version="2.1">
+
+    <persistence-unit name="persistUnit">
+        <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+        <class>org.anonhyme.entities.Campus</class>
+        <class>org.anonhyme.entities.CategorieLocaux</class>
+        <class>org.anonhyme.entities.Evenement</class>
+        <class>org.anonhyme.entities.Locaux</class>
+        <class>org.anonhyme.entities.LocauxRessource</class>
+        <class>org.anonhyme.entities.Log</class>
+        <class>org.anonhyme.entities.Pavillon</class>
+        <class>org.anonhyme.entities.Periode</class>
+        <class>org.anonhyme.entities.ReservationDemande</class>
+        <class>org.anonhyme.entities.ReservationPeriode</class>
+        <class>org.anonhyme.entities.Ressource</class>
+        <class>org.anonhyme.entities.Role</class>
+        <class>org.anonhyme.entities.UsagerRole</class>
+        <class>org.anonhyme.entities.Utilisateur</class>
+        <class>org.anonhyme.entities.procedure.ReservationProcedure</class>
+        <properties>
+            <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/app1_sandbox"/>
+            <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" />
+            <property name="javax.persistence.jdbc.user" value="postgres"/>
+            <property name="javax.persistence.jdbc.password" value="uber4jar"/>
+            <property name="javax.persistence.target-database" value="PostgreSQL" />
+        </properties>
+    </persistence-unit>
+</persistence>

@@ -1,0 +1,25 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+             xmlns:g="urn:import:com.google.gwt.user.client.ui"
+             xmlns:cal="urn:import:com.google.gwt.user.datepicker.client">
+
+    <ui:style>
+        .td {
+            border-width: 0px 0px 0px 1px;
+            border-style: solid;
+            border-color: white;
+            padding: 5px;
+        }
+    </ui:style>
+    <g:HTMLPanel ui:field="main">
+        <h1>Reservations</h1>
+        <g:TextBox ui:field = "categorie"></g:TextBox>
+        <g:TextBox ui:field = "date"></g:TextBox>
+        <g:TextBox ui:field = "startTime"></g:TextBox>
+        <g:TextBox ui:field = "endTime"></g:TextBox>
+        <g:Button ui:field= "sendButton"></g:Button>
+        <g:FlexTable ui:field="reservationTable">
+        </g:FlexTable>
+        <!--<cal:DatePicker ui:field="datePicker"/>-->
+    </g:HTMLPanel>
+</ui:UiBinder>

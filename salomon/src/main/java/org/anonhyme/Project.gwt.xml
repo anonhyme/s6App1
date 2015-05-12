@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<module rename-to='Project'>
+    <!-- Inherit the core Web Toolkit stuff. -->
+    <inherits name='com.google.gwt.user.User'/>
+    <inherits name='com.google.gwt.inject.Inject'/>
+
+    <!-- Default css -->
+    <!--<inherits name='com.google.gwt.user.theme.standard.Standard'/>-->
+    <inherits name='com.google.gwt.user.theme.chrome.Chrome'/>
+    <!-- <inherits name='com.google.gwt.user.theme.dark.Dark'/> -->
+
+    <!-- Other module inherits -->
+    <inherits name='com.gwtplatform.dispatch.Dispatch'/>
+    <inherits name='com.gwtplatform.mvp.MvpWithEntryPoint'/>
+
+    <source path='client'/>
+    <source path='shared'/>
+
+    <set-configuration-property name="gin.ginjector.modules"
+                                value="org.anonhyme.client.gin.ClientModule"/>
+
+    <!--<set-configuration-property name="CssResource.enableGss" value="true"/>-->
+
+    <inherits name="com.google.gwt.logging.Logging"/>
+    <!--<inherits name="com.google.web.bindery.requestfactory.RequestFactory"/>-->
+
+    <set-property name="gwt.logging.logLevel" value="INFO"/>
+    <set-property name="gwt.logging.enabled" value="TRUE"/>
+
+</module>
